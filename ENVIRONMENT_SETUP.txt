@@ -1,0 +1,166 @@
+════════════════════════════════════════════════════════════════════════
+  ENVIRONMENT VARIABLES QUICK REFERENCE
+════════════════════════════════════════════════════════════════════════
+
+⚡ MINIMUM SETUP (Just 2 variables):
+
+  1. MONGODB_URI
+     └─ Get from: https://www.mongodb.com/cloud/atlas (free)
+     └─ Format: mongodb+srv://username:password@cluster.mongodb.net/dbname
+
+  2. JWT_SECRET
+     └─ Generate: openssl rand -base64 32
+     └─ Example: aB1cD2eF3gH4iJ5kL6mN7oP8qR9sT0u
+
+════════════════════════════════════════════════════════════════════════
+📋 COMPLETE ENVIRONMENT VARIABLES
+════════════════════════════════════════════════════════════════════════
+
+REQUIRED (must set):
+───────────────────
+  MONGODB_URI = mongodb+srv://user:pass@cluster.mongodb.net/db
+  JWT_SECRET = (32-character random string)
+
+OPTIONAL (have defaults):
+─────────────────────────
+  NODE_ENV = production
+  PORT = 3000 (Railway sets this)
+  DOMAIN = your-project.up.railway.app
+  LOG_LEVEL = info
+  CORS_ORIGIN = https://your-app-domain.com
+  RATE_LIMIT_WINDOW_MS = 900000
+  RATE_LIMIT_MAX_REQUESTS = 100
+
+FOR SIP/VOIP (if using):
+───────────────────────
+  SIP_PROVIDER = twilio
+  SIP_SERVER = sip.twilio.com
+  SIP_PORT = 5060
+  SIP_USERNAME = your_twilio_account_sid
+  SIP_PASSWORD = your_twilio_auth_token
+
+════════════════════════════════════════════════════════════════════════
+🚀 QUICK SETUP STEPS
+════════════════════════════════════════════════════════════════════════
+
+STEP 1: Create MongoDB Account (2 min)
+──────────────────────────────────────
+1. Go to https://www.mongodb.com/cloud/atlas
+2. Click "Start Free"
+3. Create account (free)
+4. Create M0 cluster (free tier)
+5. Get connection string
+6. Save it
+
+STEP 2: Generate JWT Secret (1 min)
+───────────────────────────────────
+Run in terminal:
+  openssl rand -base64 32
+
+Copy the output
+
+STEP 3: Set in Railway (2 min)
+──────────────────────────────
+1. Go to Railway dashboard
+2. Click your project (backend-fcs)
+3. Go to "Variables" tab
+4. Click "New Variable"
+5. Set MONGODB_URI = (paste from MongoDB)
+6. Set JWT_SECRET = (paste generated key)
+7. Click "Deploy"
+
+STEP 4: Test (1 min)
+────────────────────
+  curl https://your-project.up.railway.app/health
+
+SUCCESS! You should see:
+  {"status":"OK","timestamp":"..."}
+
+════════════════════════════════════════════════════════════════════════
+📚 WHERE TO GET VALUES
+════════════════════════════════════════════════════════════════════════
+
+MONGODB_URI:
+  1. Go to: https://www.mongodb.com/cloud/atlas
+  2. Sign up (free)
+  3. Create cluster (M0 = free)
+  4. Click "Connect" button
+  5. Choose "Connect your application"
+  6. Copy connection string
+  7. Replace <password> with your database password
+
+JWT_SECRET:
+  Generate with: openssl rand -base64 32
+  Or use any 32+ character random string
+
+PORT:
+  Leave empty - Railway sets automatically to 3000
+
+NODE_ENV:
+  Use: production
+
+CORS_ORIGIN:
+  Use your Android app's domain or:
+  http://localhost:3000 (for testing)
+
+════════════════════════════════════════════════════════════════════════
+🔐 SECURITY TIPS
+════════════════════════════════════════════════════════════════════════
+
+✅ Always use strong JWT_SECRET (32+ chars)
+✅ Never commit .env to GitHub (it's in .gitignore)
+✅ Change JWT_SECRET for production
+✅ Use MongoDB IP whitelist (allow 0.0.0.0/0 for public)
+✅ Enable HTTPS (Railway does this automatically)
+✅ Set NODE_ENV=production in production
+
+════════════════════════════════════════════════════════════════════════
+🆘 TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════
+
+BACKEND WON'T START:
+  Check Railway logs for error
+  Most likely: MONGODB_URI not set or invalid
+
+MONGODB CONNECTION ERROR:
+  ❌ Connection string is wrong
+  ✅ Solution: Get fresh connection string from MongoDB Atlas
+
+JWT TOKEN ERRORS:
+  ❌ JWT_SECRET not set or invalid
+  ✅ Solution: Generate new JWT_SECRET with openssl
+
+CORS ERRORS:
+  ❌ CORS_ORIGIN not set correctly
+  ✅ Solution: Set CORS_ORIGIN to your app's domain
+
+════════════════════════════════════════════════════════════════════════
+💡 WHAT HAPPENS WHEN YOU SET VARIABLES
+════════════════════════════════════════════════════════════════════════
+
+1. You set MONGODB_URI in Railway Variables
+2. Railway injects it into your application
+3. Your backend connects to MongoDB
+4. All database operations work
+5. Your API endpoints are ready to use
+
+Same for JWT_SECRET:
+1. You set JWT_SECRET
+2. Railway injects it
+3. Your auth system uses it
+4. Users can register/login
+5. JWT tokens are generated
+
+════════════════════════════════════════════════════════════════════════
+✨ YOU'RE READY!
+════════════════════════════════════════════════════════════════════════
+
+Just need:
+  1. MongoDB connection string (5 min to set up free account)
+  2. JWT secret (1 min to generate)
+  3. Set both in Railway Variables tab
+  4. Click Deploy
+
+That's it! Your backend will be live! 🚀
+
+════════════════════════════════════════════════════════════════════════
