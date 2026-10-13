@@ -1,0 +1,184 @@
+═════════════════════════════════════════════════════════════════════════
+  ⚡ DEPLOY YOUR BACKEND IN 10 MINUTES ⚡
+═════════════════════════════════════════════════════════════════════════
+
+FASTEST PATH: Railway.app
+Time: ~10 minutes to LIVE backend
+Cost: Free (can upgrade later)
+
+═════════════════════════════════════════════════════════════════════════
+STEP 1: GitHub Setup (3 minutes)
+═════════════════════════════════════════════════════════════════════════
+
+Run these commands (copy & paste):
+
+git init
+git add .
+git commit -m "Fake call backend"
+
+Go to: https://github.com/new
+- Repository name: fake-call-backend
+- Click "Create repository"
+- Copy the commands shown
+
+Paste into terminal:
+git remote add origin https://github.com/YOUR_USERNAME/fake-call-backend.git
+git branch -M main
+git push -u origin main
+
+✅ Your code is on GitHub!
+
+═════════════════════════════════════════════════════════════════════════
+STEP 2: Create Railway Account (2 minutes)
+═════════════════════════════════════════════════════════════════════════
+
+1. Go to: https://railway.app
+2. Click "Start Project"
+3. Click "Deploy from GitHub"
+4. Authorize Railway to access GitHub
+5. Select your "fake-call-backend" repository
+6. Click "Deploy Now"
+
+✅ Deployment started!
+
+═════════════════════════════════════════════════════════════════════════
+STEP 3: Add MongoDB Database (2 minutes)
+═════════════════════════════════════════════════════════════════════════
+
+1. In Railway dashboard
+2. Click "Create" → "Database" → "MongoDB"
+3. Railway automatically adds MONGODB_URI to your app!
+
+✅ Database connected!
+
+═════════════════════════════════════════════════════════════════════════
+STEP 4: Get Your Live URL (1 minute)
+═════════════════════════════════════════════════════════════════════════
+
+1. Go to Railway dashboard
+2. Click your project
+3. Go to "Settings" tab
+4. Find "Domains"
+5. Your URL: https://your-project.up.railway.app
+
+✅ Your backend is LIVE!
+
+═════════════════════════════════════════════════════════════════════════
+STEP 5: Test It (1 minute)
+═════════════════════════════════════════════════════════════════════════
+
+Open terminal and run:
+
+curl https://your-project.up.railway.app/health
+
+If you see:
+{"status":"OK","timestamp":"2026-10-14T..."}
+
+✅ Everything works!
+
+═════════════════════════════════════════════════════════════════════════
+STEP 6: Connect Your Android App (1 minute)
+═════════════════════════════════════════════════════════════════════════
+
+In your Android app code:
+
+Change:
+API_BASE_URL = "https://your-project.up.railway.app"
+
+Rebuild and test!
+
+✅ Done!
+
+═════════════════════════════════════════════════════════════════════════
+⏱️  TIMING BREAKDOWN
+═════════════════════════════════════════════════════════════════════════
+
+1. GitHub Setup:        3 min
+2. Railway Account:     2 min
+3. Add Database:        2 min
+4. Wait for Deploy:     2 min
+5. Get URL:            1 min
+6. Test:               1 min
+7. Buffer/mistakes:    2 min
+─────────────────────────────
+TOTAL:                ~10 minutes
+
+═════════════════════════════════════════════════════════════════════════
+✅ WHAT YOU'LL HAVE
+═════════════════════════════════════════════════════════════════════════
+
+✅ Live backend running 24/7
+✅ Free MongoDB database included
+✅ HTTPS enabled automatically
+✅ Automatic SSL certificate
+✅ Logging & monitoring
+✅ Auto-restart on crash
+✅ Support for scaling
+
+═════════════════════════════════════════════════════════════════════════
+💰 COST
+═════════════════════════════════════════════════════════════════════════
+
+Free: $5/month included
+  - 500 hours of compute
+  - 1 GB database storage
+  - Enough for testing
+
+Paid plans start at $5/month if you need more.
+
+═════════════════════════════════════════════════════════════════════════
+🆘 IF DEPLOYMENT FAILS
+═════════════════════════════════════════════════════════════════════════
+
+Check Railway logs:
+1. Go to Railway dashboard
+2. Click your project
+3. Click "Logs" tab
+4. Look for errors
+
+Common issues:
+- "PORT already in use" → Railway handles this, ignore
+- "MONGODB_URI not set" → Railway adds it, just wait
+- "Node version error" → Railway uses latest Node
+
+If stuck:
+- Check logs first
+- Wait 5 minutes (deployment takes time)
+- Try redeploying: Railway dashboard → Redeploy
+
+═════════════════════════════════════════════════════════════════════════
+🎯 NEXT STEPS AFTER DEPLOY
+═════════════════════════════════════════════════════════════════════════
+
+1. Test all endpoints with curl (examples in PROJECT_SETUP.md)
+2. Configure SIP provider credentials (if using Twilio)
+3. Set up Firebase for push notifications
+4. Update Android app with backend URL
+5. Test end-to-end from app
+6. Monitor performance in Railway dashboard
+
+═════════════════════════════════════════════════════════════════════════
+💡 ALTERNATIVE: If Railway doesn't work
+═════════════════════════════════════════════════════════════════════════
+
+Use Render.com instead (same steps):
+1. Go to render.com
+2. Sign up with GitHub
+3. Create Web Service → Select repo
+4. Add database
+5. Deploy
+
+Or use Replit (even faster, no GitHub needed):
+1. Go to replit.com
+2. Create Node.js Repl
+3. Upload files
+4. Click Run
+5. Get URL instantly
+
+═════════════════════════════════════════════════════════════════════════
+
+YOU'LL HAVE YOUR LIVE BACKEND IN 10 MINUTES! 🚀
+
+Just follow these 6 steps and you're done.
+
+═════════════════════════════════════════════════════════════════════════
